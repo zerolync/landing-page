@@ -96,11 +96,12 @@ function App() {
           any blockchain - all with a unified, self-custodial wallet experience.
         </p>
         <div className="flex justify-center space-x-6">
-          <Button
+          <button
             onClick={handleActionClick}
-            className="bg-black hover:bg-gray-200 text-white"
-            content="Launch App"
-          />
+            className={`bg-black hover:bg-gray-200 text-white px-8 py-3 rounded-full transition-all hover:scale-105 text-sm font-medium tracking-wider `}
+          >
+            Launch App
+          </button>
           <Button
             onClick={handleActionClick}
             className="bg-white hover:bg-gray-200 text-black"
@@ -133,18 +134,20 @@ function App() {
         </div>
       </section>
 
-      <section className="container mx-auto px-6">
+      <section className="container mx-auto px-6 text-center">
         <h2 className="text-3xl font-light text-center mb-16">How it work </h2>
         <p className="text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed tracking-wide fade-in">
           Here is simple flow. u can insert your picture about flow how it work
           below
         </p>
-        <img
-          src="https://d1.awsstatic.com/video-thumbs/Step-Functions/AWS_Step_Functions_HIW.bc3d2930f00dd0401269367b8e8617a7dba5915c.png"
-          alt="Diagram shows the workflow for a store checkout process using AWS Step Functions. AWS Lambda functions are invoked for each step of the process."
-          title=""
-          className="cq-dd-image"
-        ></img>
+        <div className="flex justify-center">
+          <img
+            src="https://d1.awsstatic.com/video-thumbs/Step-Functions/AWS_Step_Functions_HIW.bc3d2930f00dd0401269367b8e8617a7dba5915c.png"
+            alt="Diagram shows the workflow for a store checkout process using AWS Step Functions. AWS Lambda functions are invoked for each step of the process."
+            title=""
+            className="cq-dd-image w-3/4"
+          ></img>
+        </div>
       </section>
       {/* Problem Solution Section */}
       <section id="about" className="container mx-auto px-6 py-24">
