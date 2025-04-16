@@ -1,30 +1,9 @@
 import React, { useState } from "react";
-import { Shield, Coins, Github, Twitter, Mail } from "lucide-react";
-
-function Logo() {
-  return (
-    <div className="flex items-center space-x-3">
-      <div className="relative">
-        <div className="w-12 h-10 rounded-[100px] border-2 border-white flex items-center justify-center logo-container">
-          <div className="absolute inset-0 logo-circle"></div>
-          <div className="logo-bolt">
-            <svg
-              className="w-6 h-6 text-white relative z-10"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-            >
-              <path d="M13 3L4 14h7l-2 7 9-11h-7l2-7z" />
-            </svg>
-          </div>
-        </div>
-      </div>
-      <div className="text-2xl font-light tracking-wider">
-        <span className="text-white">ZERO</span>
-        <span className="text-white">LYNC</span>
-      </div>
-    </div>
-  );
-}
+import { Shield, Coins } from "lucide-react";
+import Logo from "./Component/Logo";
+import Footer from "./Component/Footer";
+import Button from "./Component/Button";
+import Header from "./Component/Header";
 
 function Terminal({ children }: { children: React.ReactNode }) {
   return (
@@ -102,23 +81,7 @@ function App() {
       {/* Navigation */}
       <nav className="container mx-auto px-6 py-6 flex justify-between items-center fade-in">
         <Logo />
-        <div className="flex items-center space-x-8">
-          <a
-            href="#features"
-            className="hover:text-gray-300 transition-colors text-sm tracking-wider"
-          >
-            Features
-          </a>
-          <a
-            href="#about"
-            className="hover:text-gray-300 transition-colors text-sm tracking-wider"
-          >
-            About
-          </a>
-          <button className="bg-white/10 hover:bg-white/20 text-white px-6 py-2 rounded-full text-sm transition-all hover:scale-105 tracking-wider">
-            Get Started
-          </button>
-        </div>
+        <Header />
       </nav>
 
       {/* Hero Section */}
@@ -133,20 +96,23 @@ function App() {
           any blockchain - all with a unified, self-custodial wallet experience.
         </p>
         <div className="flex justify-center space-x-6">
-          <button
+          <Button
             onClick={handleActionClick}
-            className="bg-white hover:bg-gray-200 text-black px-8 py-3 rounded-full transition-all hover:scale-105 text-sm font-medium tracking-wider"
-          >
-            Launch App
-          </button>
-          <button
+            className="bg-black hover:bg-gray-200 text-white"
+            content="Launch App"
+          />
+          <Button
+            onClick={handleActionClick}
+            className="bg-white hover:bg-gray-200 text-black"
+            content="View Live Demo"
+          />
+          <Button
             onClick={() =>
               (window.location.href = "https://docs.zerolync.xyz/")
             }
-            className="border border-white/30 hover:border-white bg-white/5 hover:bg-white/10 px-8 py-3 rounded-full transition-all hover:scale-105 text-sm tracking-wider"
-          >
-            Read Docs
-          </button>
+            content="Read Docs"
+            className="border border-white/30 hover:border-white bg-white/5 hover:bg-white/10 text-white"
+          />
           <a
             href="https://t.me/+TVXxrZwbEhg3NjJl"
             target="_blank"
@@ -167,8 +133,22 @@ function App() {
         </div>
       </section>
 
+      <section className="container mx-auto px-6">
+        <h2 className="text-3xl font-light text-center mb-16">How it work </h2>
+        <p className="text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed tracking-wide fade-in">
+          Here is simple flow. u can insert your picture about flow how it work
+          below
+        </p>
+        <img
+          src="https://d1.awsstatic.com/video-thumbs/Step-Functions/AWS_Step_Functions_HIW.bc3d2930f00dd0401269367b8e8617a7dba5915c.png"
+          alt="Diagram shows the workflow for a store checkout process using AWS Step Functions. AWS Lambda functions are invoked for each step of the process."
+          title=""
+          className="cq-dd-image"
+        ></img>
+      </section>
       {/* Problem Solution Section */}
       <section id="about" className="container mx-auto px-6 py-24">
+        <h2 className="text-3xl font-light text-center mb-16">Code Example </h2>
         <Terminal>
           <div className="space-y-4">
             <div className="flex items-start">
@@ -268,42 +248,7 @@ function App() {
           </div>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="border-t border-white/10">
-        <div className="container mx-auto px-6 py-12">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
-            <Logo />
-            <div className="flex items-center space-x-6">
-              <a
-                href="https://x.com/zero_lync"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white hover:text-gray-300 transition-all hover:scale-110"
-              >
-                <Twitter className="w-5 h-5" strokeWidth={1.5} />
-              </a>
-              <a
-                href="https://github.com/zerolync"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white hover:text-gray-300 transition-all hover:scale-110"
-              >
-                <Github className="w-5 h-5" strokeWidth={1.5} />
-              </a>
-              <a
-                href="mailto:zerolync@gmail.com"
-                className="text-white hover:text-gray-300 transition-all hover:scale-110"
-              >
-                <Mail className="w-5 h-5" strokeWidth={1.5} />
-              </a>
-            </div>
-            <div className="text-gray-400 text-sm tracking-wider">
-              © 2025 Zerolync. All rights reserved.
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
